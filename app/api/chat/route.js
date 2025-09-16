@@ -1,10 +1,10 @@
-export const runtime = "edge"; // funciona bien en Netlify
+export const runtime = "edge"; // ideal para Netlify
 
 export async function POST(req) {
   try {
     const { messages = [] } = await req.json();
 
-    // Normaliza y limita el historial
+    // Normaliza y limita historial
     const normalized = messages
       .map(m => ({
         role: m.role === "assistant" ? "assistant" : "user",
